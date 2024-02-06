@@ -8,7 +8,7 @@ def create_iam_user(username):
         response = iam.create_user(UserName=username)
         print("IAM user created:", response['User']['UserName'])
         
-        # Attach a policy to the user (Replace 'YourPolicyARN' with the full ARN of your policy)
+        # Attach a policy to the user (Replace 'IAMReadOnlyAccess' with the full ARN of your policy)
         policy_arn = 'arn:aws:iam::aws:policy/IAMReadOnlyAccess'  
         # Replace with your actual policy ARN
         iam.attach_user_policy(
